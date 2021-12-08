@@ -1,7 +1,7 @@
 @echo off
 
 color 17
-set scriptversion=v1.0
+set scriptversion=v1.0.1
 set brpmode=SinglePlayer
 set running=Done. Starting Blefonix RolePlay %brpmode%
 set error=[Error] Check if $fastman92limAdjuster.mp_, $fastman92limAdjuster.sp_, $fastman92limAdjuster.rh_ files exists in your game folder.
@@ -75,11 +75,10 @@ if not exist $brpsa-settings.ini (
 	if exist timecycle24.asi_ ren timecycle24.asi_ timecycle24.asi
 	if exist reshade-shaders ren reshade-shaders render
 	if exist imfast.asi ren imfast.asi imfast.asi_
-	if not exist "!enabled_1.0.0_single" (
-		if exist "!enabled_1.0.0_samp" ren "!enabled_1.0.0_samp" "!enabled_1.0.0_single" NUL
-		if exist "!enabled_1.0.0_mtasa" ren "!enabled_1.0.0_mtasa" "!enabled_1.0.0_single" NUL
-		if exist "!enabled_1.0.0_rhook" ren "!enabled_1.0.0_rhook" "!enabled_1.0.0_single" NUL
-	)
+	if exist "101-enabled-samp" ren "101-enabled-samp" "101-enabled-single"
+	if exist "101-enabled-mtasa" ren "101-enabled-mtasa" "101-enabled-single"
+	if exist "101-enabled-rhook" ren "101-enabled-rhook" "101-enabled-single"
+	if not exist "101-enabled-single" mkdir "101-enabled-single"
 	if exist data (
 		if not exist datam ren data datam
 		if exist datasp ren datasp data

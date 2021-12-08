@@ -1,7 +1,7 @@
 @echo off
 
 color 17
-set scriptversion=v1.0
+set scriptversion=v1.0.1
 set brpmode=SAMP
 set running=Done. Starting Blefonix RolePlay %brpmode%
 set error=[Error] Check if $fastman92limAdjuster.mp_, $fastman92limAdjuster.sp_, $fastman92limAdjuster.rh_ files exists in your game folder.
@@ -75,11 +75,10 @@ if not exist $brpsa-settings.ini (
 	if exist timecycle24.asi_ ren timecycle24.asi_ timecycle24.asi
 	if exist reshade-shaders ren reshade-shaders render
 	if exist imfast.asi ren imfast.asi imfast.asi_
-	if not exist "!enabled_1.0.0_samp" (
-		if exist "!enabled_1.0.0_single" ren "!enabled_1.0.0_single" "!enabled_1.0.0_samp" NUL
-		if exist "!enabled_1.0.0_mtasa" ren "!enabled_1.0.0_mtasa" "!enabled_1.0.0_samp" NUL
-		if exist "!enabled_1.0.0_rhook" ren "!enabled_1.0.0_rhook" "!enabled_1.0.0_samp" NUL
-	)
+	if exist "101-enabled-single" ren "101-enabled-single" "101-enabled-samp"
+	if exist "101-enabled-mtasa" ren "101-enabled-mtasa" "101-enabled-samp"
+	if exist "101-enabled-rhook" ren "101-enabled-rhook" "101-enabled-samp"
+	if not exist "101-enabled-samp" mkdir "101-enabled-samp"
 	if exist data (
 		if not exist datasp ren data datasp
 		if exist datam ren datam data

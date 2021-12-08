@@ -1,7 +1,7 @@
 @echo off
 
 color 17
-set scriptversion=v1.0
+set scriptversion=v1.0.1
 set brpmode=MTA
 set running=Done. Starting Blefonix RolePlay %brpmode%
 set help=[Help] If you need help, please write to Blefonix RolePlay Discord: https://discord.gg/n2FPfqwh2g
@@ -73,11 +73,10 @@ if not exist $brpsa-settings.ini (
 	if exist mtasa (
 		if exist reshade-shaders ren reshade-shaders render
 		if exist imfast.asi ren imfast.asi imfast.asi_
-		if not exist "!enabled_1.0.0_mta" (
-			if exist "!enabled_1.0.0_single" ren "!enabled_1.0.0_single" "!enabled_1.0.0_mtasa" NUL
-			if exist "!enabled_1.0.0_samp" ren "!enabled_1.0.0_samp" "!enabled_1.0.0_mtasa" NUL
-			if exist "!enabled_1.0.0_rhook" ren "!enabled_1.0.0_samp" "!enabled_1.0.0_mtasa" NUL
-		)
+		if exist "101-enabled-single" ren "101-enabled-single" "101-enabled-mtasa"
+		if exist "101-enabled-samp" ren "101-enabled-samp" "101-enabled-mtasa"
+		if exist "101-enabled-rhook" ren "101-enabled-samp" "101-enabled-mtasa"
+		if not exist "101-enabled-mtasa" mkdir "101-enabled-mtasa"
 		if exist data (
 			if not exist datasp ren data datasp
 			if exist datam ren datam data

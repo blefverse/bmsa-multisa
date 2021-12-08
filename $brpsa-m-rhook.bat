@@ -1,7 +1,7 @@
 @echo off
 
 color 17
-set scriptversion=v1.0
+set scriptversion=v1.0.1
 set brpmode=RenderHook
 set running=Done. Starting Blefonix RolePlay %brpmode%
 set error=[Error] Check if $fastman92limAdjuster.mp_, $fastman92limAdjuster.sp_, $fastman92limAdjuster.rh_ files exists in your game folder.
@@ -80,11 +80,10 @@ if not exist $brpsa-settings.ini (
 	if exist modrhook ren modrhook modloader
 	if exist render ren render reshade-shaders
 	if exist imfast.asi_ ren imfast.asi_ imfast.asi
-	if not exist "!enabled_1.0.0_rhook" (
-		if exist "!enabled_1.0.0_samp" ren "!enabled_1.0.0_samp" "!enabled_1.0.0_rhook" NUL
-		if exist "!enabled_1.0.0_single" ren "!enabled_1.0.0_single" "!enabled_1.0.0_rhook" NUL
-		if exist "!enabled_1.0.0_mtasa" ren "!enabled_1.0.0_mtasa" "!enabled_1.0.0_rhook" NUL
-	)
+	if exist "101-enabled-samp" ren "101-enabled-samp" "101-enabled-rhook"
+	if exist "101-enabled-single" ren "101-enabled-single" "101-enabled-rhook"
+	if exist "101-enabled-mtasa" ren "101-enabled-mtasa" "101-enabled-rhook"
+	if not exist "101-enabled-rhook" mkdir "101-enabled-rhook"
 	if exist data (
 		if not exist datasp ren data datasp
 		if exist datam ren datam data
